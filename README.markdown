@@ -36,8 +36,8 @@ The project uses **PyMuPDF** for PDF processing, **SentenceTransformers** for em
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/your-username/rag-ai-assistant.git
-   cd rag-ai-assistant
+   git clone https://github.com/amirabbas-gash/TAC-AI-Agent.git
+   cd TAC-AI-Agent
    ```
 
 2. **Install Dependencies**:
