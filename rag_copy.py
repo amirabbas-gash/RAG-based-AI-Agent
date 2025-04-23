@@ -13,7 +13,7 @@ import textwrap
 import torch
 
 
-pdf_path = "/home/ai/TAC2-lbz/knowledge_base.pdf"
+pdf_path = "your knowledge base path"
 
 def text_formatter(text:str) -> str:
     cleaned_text = text.replace("\n", " ").strip()
@@ -102,7 +102,7 @@ np.shape(pages_and_chunks_over_min_token_length[100]["embedding"])
 
 
 text_chunks_and_embeddings_df = pd.DataFrame(pages_and_chunks_over_min_token_length)
-embedding_df_path= "/home/ai/TAC2-lbz/text_chunks_and_embeddings_df.csv"
+embedding_df_path= "your path to text_chunks_and_embeddings_df.csv"
 text_chunks_and_embeddings_df.to_csv(embedding_df_path, index=False)
 
 
@@ -129,7 +129,7 @@ def retrieve_relevant_resources(query: str,
     return scores, indices
 
 # importing text and embeddings
-text_chunks_and_embeddings_df = pd.read_csv("/home/ai/TAC2-lbz/text_chunks_and_embeddings_df.csv")
+text_chunks_and_embeddings_df = pd.read_csv("your text_chunks_and_embeddings_df.csv path")
 
 # now converting embedding column to a np.array
 text_chunks_and_embeddings_df["embedding"] = text_chunks_and_embeddings_df["embedding"].apply(lambda x: np.fromstring(x.strip("[]"), sep=" "))
@@ -201,7 +201,7 @@ def answer_to_question(query: str):
 
     prompt = prompt_formatter(query=query,
                         context_items=context_items)
-    input_ids = tokenizer(prompt, return_tensors="pt").to("cpu")
+    input_ids = tokenizer(prompt, return_tensors="pt").to("cuda")
 
     outputs = llm_model.generate(**input_ids,
                             temperature=0.7, 
