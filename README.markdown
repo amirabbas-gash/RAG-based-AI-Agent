@@ -29,6 +29,7 @@ The project uses **PyMuPDF** for PDF processing, **SentenceTransformers** for em
 
 - Python 3.8+
 - CUDA-enabled GPU (recommended for embedding and LLM inference)
+-- mine : NVIDIA GeForce RTX 3090
 - Required libraries (see below)
 
 ### Setup
@@ -129,9 +130,6 @@ The purpose of the MES5448 and MES7048 Data Center Switches is to provide high-p
 
 Contributions are welcome! Please submit a pull request or open an issue to discuss improvements or bug fixes.
 
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Acknowledgments
 
